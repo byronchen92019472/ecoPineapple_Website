@@ -1,0 +1,68 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container grey" id="grey">
+
+<div class="productl">
+    <div class="productmenu">
+        <h3>Product Categories</h3>
+<ul class="productnav">   
+                    <li><a href="{% url 'product_home' %}">Cleaning</a></li>
+                    <li><a href="{% url 'product_home' %}">Furniture</a></li>
+                    <li><a href="{% url 'product_home' %}">Personal</a></li>
+                    <li><a href="{% url 'product_home' %}">Food &Aacute; Drink</a></li>
+    </ul>
+    </div>
+</div>
+
+<div class="productr">
+
+    {% if products %}
+
+    {% for product in products %}
+
+    <div class="productdetail">
+
+
+        <img class="producthero" src="../../static/images/product/cleaner.PNG" />
+        <div class="productdetailtext">
+            <h3>{{ product.name|capfirst }}</h3>
+            <p>{{ product.desc_short }}</p>
+            <p>{{ product.desc_long }}</p>
+            <div class="productheroprice">
+                <div class="productpricecart">
+                    from ${{ product.price }}
+                    <br />
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="contentclear"></div>
+
+
+    <hr />
+
+
+    {% endfor %}
+    {% endif %}
+
+
+
+
+
+
+
+
+    <div class="contentclear"></div>
+
+
+</div>
+    <div class="contentclear"></div>
+</div>
+
+    
+
+{% endblock %}

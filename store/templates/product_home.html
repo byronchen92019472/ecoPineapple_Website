@@ -1,0 +1,86 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container grey" id="grey">
+
+<div class="productl">
+    <div class="productmenu">
+        <h3>Product Categories</h3>
+<ul class="productnav">   
+                    <li><a href="{% url 'product_home' %}">Cleaning</a></li>
+                    <li><a href="{% url 'product_home' %}">Furniture</a></li>
+                    <li><a href="{% url 'product_home' %}">Personal</a></li>
+                    <li><a href="{% url 'product_home' %}">Food &Aacute; Drink</a></li>
+    </ul>
+    </div>
+</div>
+
+<div class="productr">
+
+
+
+    <div class="producthero">
+
+
+        <img class="producthero" src="../../static/images/product/cleaner.PNG" />
+        <div class="productherotext">
+            <h3>ecoPineapple Cleaner Range</h3>
+            <p>No more stubborn stains, cleans anything off anything, and save the planet as the same time. You cannot get better!</p>
+            <div class="productheroprice">
+                <div class="productpricecart">
+                    from $8.95
+                    <br />
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="contentclear"></div>
+
+
+    <hr />
+
+
+
+
+
+
+
+
+    {% if products %}
+
+    {% for product in products %}
+    <a href="{% url 'product_detail' %}">
+        <div class="productlist">
+            <img class="productlist" src="../../static/images/product/cleaner.PNG" />
+
+            <div class="productlisttext">
+                <h4>{{ product.name|capfirst }}</h4>
+                <p>{{ product.desc_short }}</p>
+            </div>
+    </a>
+    <div class="productlistprice">
+        <div class="productpricecart">
+            from ${{ product.price }}
+            <br />
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</div>
+        
+	  {% endfor %}
+	  {% endif %}
+
+
+<div class="contentclear"></div>
+
+
+        </div>
+    <div class="contentclear"></div>
+</div>
+
+    
+
+{% endblock %}

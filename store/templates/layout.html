@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecoPineapple - eco Store</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static '/content/site.css' %}" />
+
+</head>
+
+<body>
+    <div class="alert">80% OFF SPACEX STARHOPPER - OFFER ENDS MIDNIGHT</div>
+    <div class="logo"><a href="{% url 'home' %}"><img class="logo" src="../../static/images/eP.PNG" /></a></div>
+    
+        
+    <div class="navbar">
+        <div class="container">
+            <nav>            
+
+                <div class="navbarr">
+                <ul class="navbar">  
+                   
+                    <li><a href="{% url 'home' %}">Cart</a></li>
+                                        <!--show only when logged in-->
+                    {% if user.is_authenticated %}
+                    {#<li>User: {{ user.get_username }}</li>#}
+                    <li><a href="{% url 'staff_list' %}">Staff</a></li>
+                    <li><a href="{% url 'home'%}?next={{request.path}}">Logout</a></li>
+                    {% else %}
+
+                    <!--show when logged out-->
+                    <li><a href="{% url 'home'%}?next={{request.path}}">Login</a></li>
+                    {% endif %}
+                    
+
+                    </ul>
+                    </div>
+                <div class="contentclear"></div>
+
+                <ul class="navbar">   <hr />
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'product_home' %}">Products</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'rocket' %}">Rockets</a></li>
+					
+                <hr />
+                </ul>
+
+                </div>
+
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="container body-content">
+{% block content %}{% endblock %}
+
+
+        <footer>
+            <div class="spacer"> </div>
+            <div class="words">
+            Every purchase helps our earth survive 1 second longer… Except the rocket
+            </div>
+        </footer>
+    </div>
+
+    <script src="{% static '/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static '/scripts/bootstrap.js' %}"></script>
+    <script src="{% static '/scripts/respond.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>
+
+

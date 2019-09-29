@@ -1,0 +1,87 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container grey" id="grey">
+
+<div class="productl">
+    <div class="productmenu">
+        <h3>Product Categories</h3>
+<ul class="productnav">   
+                    <li><a href="{% url 'product_home' %}">Entire Rockets</a></li>
+                    <li><a href="{% url 'product_home' %}">Seat Only</a></li>
+                    <li><a href="{% url 'product_home' %}">Extra Cargo</a></li>
+                    <li><a href="{% url 'product_home' %}">Food &Aacute; Drink</a></li>
+    </ul>
+    </div>
+</div>
+
+<div class="productr">
+
+
+
+    <div class="producthero">
+
+
+        <img class="producthero" src="../../static/images/product/ROCKET.PNG" />
+        <div class="productherotext">
+            <h3>SpaceX Starship</h3>
+            <p>Starship is a two-stage-to-orbit launch vehicle, classed as super-heavy-lift since the payload capacity to Earth orbit is cited as being at least 150,000 kg.</p>
+            <p>Buy Starship outright, so you can choose what you take with you.</p>
+            <div class="productheroprice">
+                <div class="productpricecart">
+                    from $1,000,000,000.00
+                    <br />
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="contentclear"></div>
+
+
+    <hr />
+
+
+
+
+
+
+
+
+    {% if products %}
+
+    {% for product in products %}
+    <a href="{% url 'product_detail' %}">
+        <div class="productlist">
+            <img class="productlist" src="../../static/images/product/cleaner.PNG" />
+
+            <div class="productlisttext">
+                <h4>{{ product.name|capfirst }}</h4>
+                <p>{{ product.desc_short }}</p>
+            </div>
+    </a>
+    <div class="productlistprice">
+        <div class="productpricecart">
+            from ${{ product.price }}
+            <br />
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</div>
+        
+	  {% endfor %}
+	  {% endif %}
+
+
+<div class="contentclear"></div>
+
+
+        </div>
+    <div class="contentclear"></div>
+</div>
+
+    
+
+{% endblock %}
