@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Product
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -47,19 +49,9 @@ def staff_list(request):
 
     return render(request, 'staff_list.html', context={ 'num_visits': num_visits})
 
-def login(request):
-     # Number of visits to this view, as counted in the session variable.
-    num_visits=request.session.get('num_visits', 0)
-    request.session['num_visits'] = num_visits+1
-
-    return render(request, 'login.html', context={ 'num_visits': num_visits})    
+ 
     
-def logout(request):
-     # Number of visits to this view, as counted in the session variable.
-    num_visits=request.session.get('num_visits', 0)
-    request.session['num_visits'] = num_visits+1
 
-    return render(request, 'login.html', context={ 'num_visits': num_visits})  
     
     
     

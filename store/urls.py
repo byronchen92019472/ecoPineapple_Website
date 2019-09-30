@@ -16,9 +16,10 @@ path('contact/', views.contact, name='contact'),
 path('rocket/', views.rocket, name='rocket'),
 
 path('staff_list/', views.staff_list, name='staff_list'),
-path('login/', views.login, name='login'),
+#path('login/', views.login, name='login'),
 
-
+    path('login/', auth_views.LoginView.as_view(),name='login'),
+    path('logout/', auth_views.LogoutView.as_view(),name='logout'),
 
 path('product_home/', views.product_home, name='product_home'),
 #path('product_detail/', views.product_detail, name='product_detail'),

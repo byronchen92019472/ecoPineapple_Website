@@ -5,11 +5,15 @@ from django.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 from home import views
-from store import views
+from store import views as store_views
 from django.views.generic import RedirectView
+from django.contrib.auth import views as auth_views
+#from users import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+ #   path('register/', user_views.register,name='register'),
+
 
 ]
 

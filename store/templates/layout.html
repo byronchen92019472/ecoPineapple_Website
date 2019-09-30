@@ -27,11 +27,11 @@
                     {% if user.is_authenticated %}
                     {#<li>User: {{ user.get_username }}</li>#}
                     <li><a href="{% url 'staff_list' %}">Staff</a></li>
-                    <li><a href="{% url 'home'%}?next={{request.path}}">Logout</a></li>
+                    <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
                     {% else %}
 
                     <!--show when logged out-->
-                    <li><a href="{% url 'home'%}?next={{request.path}}">Login</a></li>
+                    <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
                     {% endif %}
                     
 

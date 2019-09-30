@@ -122,3 +122,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL ='/'
+
+# log email in console for testing
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -8,6 +8,24 @@
         <section id="loginForm">
             <form action="." method="post" class="form-horizontal">
                 {% csrf_token %}
+
+
+
+                <table>
+
+                    <tr>
+                        <td>asdf{{ form.username.label_tag }}</td>
+                        <td>{{ form.username }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ form.password.label_tag }}</td>
+                        <td>{{ form.password }}asdf</td>
+                    </tr>
+                </table>
+
+
+
                 <h4>Use a local account to log in.</h4>
                 <hr />
                 <div class="form-group">
@@ -45,6 +63,6 @@
 {% block scripts %}
 
     {% load staticfiles %}
-<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+<script src="{% static 'scripts/jquery.validate.min.js' %}"></script>
 
 {% endblock %}
