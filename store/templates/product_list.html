@@ -54,7 +54,7 @@
     {% for product in products %}
     <a href="{% url 'product_detail' product.id %}">
         <div class="productlist">
-            <img class="productlist" src="../../static/images/product/cleaner.PNG" />
+            <img class="productlist" src="../../static/media/{{ product.image}}" />
             {{ product.product_id }}
             <div class="productlisttext">
                 <h4>{{ product.name|capfirst }}</h4>

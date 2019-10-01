@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{454a4872-6dde-45bf-9ec8-78c4f8de5e25}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>python.exe manage.py runserver</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
+    <IsWindowsApplication>True</IsWindowsApplication>
+    <PythonRunWebServerCommand>python</PythonRunWebServerCommand>
+    <PythonRunWebServerCommandArguments> manage.py runserver</PythonRunWebServerCommandArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="asdf.txt" />
+    <Content Include="DjangoWebProject1\app\static\app\content\bootstrap.css" />
+    <Content Include="DjangoWebProject1\app\static\app\content\bootstrap.min.css" />
+    <Content Include="DjangoWebProject1\app\static\app\content\site.css" />
+    <Content Include="DjangoWebProject1\app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\bootstrap.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\jquery.validate.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\respond.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\respond.min.js" />
+    <Content Include="DjangoWebProject1\app\static\app\scripts\_references.js" />
+    <Content Include="DjangoWebProject1\app\templates\app\about.html" />
+    <Content Include="DjangoWebProject1\app\templates\app\contact.html" />
+    <Content Include="DjangoWebProject1\app\templates\app\index.html" />
+    <Content Include="DjangoWebProject1\app\templates\app\layout.html" />
+    <Content Include="DjangoWebProject1\app\templates\app\login.html" />
+    <Content Include="DjangoWebProject1\app\templates\app\loginpartial.html" />
+    <Content Include="DjangoWebProject1\readme.html" />
+    <Content Include="DjangoWebProject1\requirements.txt" />
+    <Content Include="epweb\media\images\eP.gif" />
+    <Content Include="epweb\media\images\eP_1HUDj2M.gif" />
+    <Content Include="epweb\media\images\eP_K4MByOB.gif" />
+    <Content Include="epweb\media\images\eP_O2AxKt2.gif" />
+    <Content Include="epweb\media\images\eP_qtr6oQp.gif" />
+    <Content Include="epweb\media\images\eP_uWkbEeP.gif" />
+    <Content Include="images\eP.gif" />
+    <Content Include="images\eP_1HUDj2M.gif" />
+    <Content Include="images\eP_K4MByOB.gif" />
+    <Content Include="images\eP_O2AxKt2.gif" />
+    <Content Include="images\eP_qtr6oQp.gif" />
+    <Content Include="images\eP_uWkbEeP.gif" />
+    <Content Include="media\images\eP.gif" />
+    <Content Include="media\images\eP_1HUDj2M.gif" />
+    <Content Include="media\images\eP_K4MByOB.gif" />
+    <Content Include="media\images\eP_O2AxKt2.gif" />
+    <Content Include="media\images\eP_qtr6oQp.gif" />
+    <Content Include="media\images\eP_uWkbEeP.gif" />
+    <Content Include="store\media\images\eP.gif" />
+    <Content Include="store\media\images\eP_1HUDj2M.gif" />
+    <Content Include="store\media\images\eP_K4MByOB.gif" />
+    <Content Include="store\media\images\eP_O2AxKt2.gif" />
+    <Content Include="store\media\images\eP_qtr6oQp.gif" />
+    <Content Include="store\media\images\eP_uWkbEeP.gif" />
+    <Content Include="store\static\content\bootstrap.css" />
+    <Content Include="store\static\content\bootstrap.min.css" />
+    <Content Include="store\static\content\site.css" />
+    <Content Include="store\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="store\static\images\eP.PNG" />
+    <Content Include="store\static\images\homeBack.png" />
+    <Content Include="store\static\images\homepage.PNG" />
+    <Content Include="store\static\images\product\cleaner.PNG" />
+    <Content Include="store\static\images\product\ROCKET.PNG" />
+    <Content Include="store\static\scripts\bootstrap.js" />
+    <Content Include="store\static\scripts\bootstrap.min.js" />
+    <Content Include="store\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="store\static\scripts\jquery-1.10.2.js" />
+    <Content Include="store\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="store\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="store\static\scripts\jquery.validate.js" />
+    <Content Include="store\static\scripts\jquery.validate.min.js" />
+    <Content Include="store\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="store\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="store\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="store\static\scripts\respond.js" />
+    <Content Include="store\static\scripts\respond.min.js" />
+    <Content Include="store\static\scripts\_references.js" />
+    <Content Include="store\templates\about.html" />
+    <Content Include="store\templates\contact.html" />
+    <Content Include="store\templates\home.html" />
+    <Content Include="store\templates\layout.html" />
+    <Content Include="store\templates\login.html" />
+    <Content Include="store\templates\product_detail.html" />
+    <Content Include="store\templates\product_list.html" />
+    <Content Include="store\templates\registration\logged_out.html" />
+    <Content Include="store\templates\registration\login.html" />
+    <Content Include="store\templates\registration\password_reset.html" />
+    <Content Include="store\templates\registration\password_reset_done.html" />
+    <Content Include="store\templates\registration\password_reset_email.html" />
+    <Content Include="store\templates\registration\password_reset_form.html" />
+    <Content Include="store\templates\rocket.html" />
+    <Content Include="store\templates\rocket_home.html" />
+    <Content Include="store\templates\staff_list.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DjangoWebProject1\app\forms.py" />
+    <Compile Include="DjangoWebProject1\app\migrations\__init__.py" />
+    <Compile Include="DjangoWebProject1\app\models.py" />
+    <Compile Include="DjangoWebProject1\app\tests.py" />
+    <Compile Include="DjangoWebProject1\app\views.py" />
+    <Compile Include="DjangoWebProject1\app\__init__.py" />
+    <Compile Include="DjangoWebProject1\DjangoWebProject1\settings.py" />
+    <Compile Include="DjangoWebProject1\DjangoWebProject1\urls.py" />
+    <Compile Include="DjangoWebProject1\DjangoWebProject1\wsgi.py" />
+    <Compile Include="DjangoWebProject1\DjangoWebProject1\__init__.py" />
+    <Compile Include="DjangoWebProject1\manage.py" />
+    <Compile Include="epweb\settings.py" />
+    <Compile Include="epweb\urls.py" />
+    <Compile Include="epweb\wsgi.py" />
+    <Compile Include="epweb\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="store\admin.py" />
+    <Compile Include="store\apps.py" />
+    <Compile Include="store\forms.py" />
+    <Compile Include="store\migrations\0001_initial.py" />
+    <Compile Include="store\migrations\__init__.py" />
+    <Compile Include="store\models.py" />
+    <Compile Include="store\tests.py" />
+    <Compile Include="store\urls.py" />
+    <Compile Include="store\views.py" />
+    <Compile Include="store\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DjangoWebProject1" />
+    <Folder Include="DjangoWebProject1\app" />
+    <Folder Include="DjangoWebProject1\app\migrations" />
+    <Folder Include="DjangoWebProject1\app\static\" />
+    <Folder Include="DjangoWebProject1\app\static\app\" />
+    <Folder Include="DjangoWebProject1\app\static\app\content" />
+    <Folder Include="DjangoWebProject1\app\static\app\fonts" />
+    <Folder Include="DjangoWebProject1\app\static\app\scripts" />
+    <Folder Include="DjangoWebProject1\app\templates\" />
+    <Folder Include="DjangoWebProject1\app\templates\app" />
+    <Folder Include="DjangoWebProject1\DjangoWebProject1" />
+    <Folder Include="epweb" />
+    <Folder Include="epweb\media\" />
+    <Folder Include="epweb\media\images" />
+    <Folder Include="images" />
+    <Folder Include="media\" />
+    <Folder Include="media\images" />
+    <Folder Include="store" />
+    <Folder Include="store\media\" />
+    <Folder Include="store\media\images" />
+    <Folder Include="store\migrations" />
+    <Folder Include="store\static\" />
+    <Folder Include="store\static\content" />
+    <Folder Include="store\static\fonts" />
+    <Folder Include="store\static\images" />
+    <Folder Include="store\static\images\product" />
+    <Folder Include="store\static\scripts" />
+    <Folder Include="store\templates" />
+    <Folder Include="store\templates\registration" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

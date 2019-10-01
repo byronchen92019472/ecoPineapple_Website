@@ -22,8 +22,7 @@
 
     <div class="productdetail">
 
-
-        <img class="producthero" src="{{ MEDIA_ROOT }}/{{ product.image.url}}" />
+        <img class="producthero" src="../../static/media/{{ product.image}}" />
         <div class="productdetailtext">
             <h3>{{ product.name|capfirst }}</h3>
             <p>{{ product.desc_short }}</p>
