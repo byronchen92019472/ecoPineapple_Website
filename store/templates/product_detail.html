@@ -8,24 +8,22 @@
     <div class="productmenu">
         <h3>Product Categories</h3>
 <ul class="productnav">   
-                    <li><a href="{% url 'product_home' %}">Cleaning</a></li>
-                    <li><a href="{% url 'product_home' %}">Furniture</a></li>
-                    <li><a href="{% url 'product_home' %}">Personal</a></li>
-                    <li><a href="{% url 'product_home' %}">Food &Aacute; Drink</a></li>
+                    <li><a href="{% url 'product_list' %}">Cleaning</a></li>
+                    <li><a href="{% url 'product_list' %}">Furniture</a></li>
+                    <li><a href="{% url 'product_list' %}">Personal</a></li>
+                    <li><a href="{% url 'product_list' %}">Food &Aacute; Drink</a></li>
     </ul>
     </div>
 </div>
 
 <div class="productr">
 
-    {% if products %}
 
-    {% for product in products %}
 
     <div class="productdetail">
 
 
-        <img class="producthero" src="../../static/images/product/cleaner.PNG" />
+        <img class="producthero" src="{{ MEDIA_ROOT }}/{{ product.image.url}}" />
         <div class="productdetailtext">
             <h3>{{ product.name|capfirst }}</h3>
             <p>{{ product.desc_short }}</p>
@@ -46,8 +44,6 @@
     <hr />
 
 
-    {% endfor %}
-    {% endif %}
 
 
 

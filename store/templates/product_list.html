@@ -8,10 +8,10 @@
     <div class="productmenu">
         <h3>Product Categories</h3>
 <ul class="productnav">   
-                    <li><a href="{% url 'product_home' %}">Cleaning</a></li>
-                    <li><a href="{% url 'product_home' %}">Furniture</a></li>
-                    <li><a href="{% url 'product_home' %}">Personal</a></li>
-                    <li><a href="{% url 'product_home' %}">Food &Aacute; Drink</a></li>
+                    <li><a href="{% url 'product_list' %}">Cleaning</a></li>
+                    <li><a href="{% url 'product_list' %}">Furniture</a></li>
+                    <li><a href="{% url 'product_list' %}">Personal</a></li>
+                    <li><a href="{% url 'product_list' %}">Food &Aacute; Drink</a></li>
     </ul>
     </div>
 </div>
@@ -52,15 +52,15 @@
     {% if products %}
 
     {% for product in products %}
-    <a href="{% url 'product_detail' %}">
+    <a href="{% url 'product_detail' product.id %}">
         <div class="productlist">
             <img class="productlist" src="../../static/images/product/cleaner.PNG" />
-
+            {{ product.product_id }}
             <div class="productlisttext">
                 <h4>{{ product.name|capfirst }}</h4>
                 <p>{{ product.desc_short }}</p>
             </div>
-    </a>
+</a>
     <div class="productlistprice">
         <div class="productpricecart">
             from ${{ product.price }}

@@ -14,7 +14,7 @@ class Product(models.Model):
         ('Food & Drink', 'Food & Drink')
     )
 
-    product_id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this Product")
+    #product_id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this Product")
     category = models.CharField(choices=PRODUCT_CATEGORY, max_length=30)
     brand = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
@@ -27,4 +27,21 @@ class Product(models.Model):
 
 
     def __str__(self):
-        return self.brand + ' ' + self.name
+        #String for representing the Model object
+        return '{0} ({1})'.format(self.id,self.name)
+
+
+
+    #https://blog.khophi.co/extending-django-user-model-userprofile-like-a-pro/
+
+
+class Category(models.Model):
+
+    
+    #product_id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this Product")
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        #String for representing the Model object (in Admin site etc.)
+        return self.name
+    
