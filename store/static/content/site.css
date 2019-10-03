@@ -183,28 +183,27 @@ nav li a {
 
 
 
-ul.productnav {
+ul.sidenav {
     margin: 5px;
     list-style: none;
     padding: 5px;
     border: none;
     font-family: sans-serif;
 }
-    ul.productnav li{
-        margin: 5px;
-
+    ul.sidenav li {
+        margin: 0px;
         list-style: none;
         padding: 5px;
         border: none;
         font-family: sans-serif;
     }
 
-    ul.productnav li a {
-        text-decoration: none;
-        font-family: sans-serif;
-        color: #262626;
-        font-size: small;
-    }
+        ul.sidenav li a {
+            text-decoration: none;
+            font-family: sans-serif;
+            color: #262626;
+            font-size: small;
+        }
 
 
 .navbarr{
@@ -212,19 +211,20 @@ ul.productnav {
         
     }
 
-.productl {
-    width: 200px;
+.sidenav {
+    width: 180px;
     float: left;
     border: 0px solid red;
     text-align: left;
-    padding: 0px;
+    padding: 0px 0px 0px 20px;
 }
 
-.productr {
+.subcontent {
     width: 750px;
     float: right;
     border: 0px solid blue;
     padding: 0px;
+    text-align: left;
 }
 
 img.producthero {

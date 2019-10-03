@@ -1,0 +1,23 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Staff</h1>
+<h2></h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <button type="submit">Save changes</button>
+</form>
+
+<h2>{{ user.get_full_name }}</h2>
+<ul>
+    <li>Username: {{ user.username }}</li>
+    <li>Name: {{ user.profile.first_name}} {{user.profile.last_name}}</li>
+    <li>Phone: {{ user.profile.phone }}</li>
+    <li>Email: {{ user.profile.email }}</li>
+</ul>
+
+{% endblock %}

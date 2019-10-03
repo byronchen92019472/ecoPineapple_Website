@@ -4,19 +4,17 @@
 
 <div class="container grey" id="grey">
 
-<div class="productl">
-    <div class="productmenu">
-        <h3>Product Categories</h3>
-<ul class="productnav">   
+<div class="sidenav">
+        <h4>Product Categories</h4>
+<ul class="sidenav">   
                     <li><a href="{% url 'product_list' %}">Cleaning</a></li>
                     <li><a href="{% url 'product_list' %}">Furniture</a></li>
                     <li><a href="{% url 'product_list' %}">Personal</a></li>
                     <li><a href="{% url 'product_list' %}">Food &Aacute; Drink</a></li>
     </ul>
     </div>
-</div>
 
-<div class="productr">
+<div class="subcontent">
 
 
 
@@ -24,7 +22,7 @@
 
         <img class="producthero" src="../../static/media/{{ product.image}}" />
         <div class="productdetailtext">
-            <h3>{{ product.name|capfirst }}</h3>
+            <h4>{{ product.name|capfirst }}</h4>
             <p>{{ product.desc_short }}</p>
             <p>{{ product.desc_long }}</p>
             <div class="productheroprice">

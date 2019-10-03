@@ -29,4 +29,7 @@ urlpatterns += [
     path('logout/', auth_views.LogoutView.as_view(),name='logout'),
 
 ]
-
+#Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]

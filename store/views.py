@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic
 
 from .models import Product
+from .models import Profile
 
 # Create your views here.
 
@@ -45,25 +46,39 @@ def rocket(request):
 
     return render(request, 'rocket_home.html', context={ 'num_visits': num_visits})
 
-def staff_list(request):
-     # Number of visits to this view, as counted in the session variable.
+
+
+def staff_detailtest(request):
+
     num_visits=request.session.get('num_visits', 0)
     request.session['num_visits'] = num_visits+1
+    return render(request, 'staff_detailtest.html', context={ 'num_visits': num_visits}) 
 
-    return render(request, 'staff_list.html', context={ 'num_visits': num_visits})
 
- 
-    
 
-    
-    
-    
-#def products(request):
-#    return render(request,'product_home.html',{})
-    
 def product_list(request):
     products_list=Product.objects.all()
     return render(request,'product_list.html',{'products' :products_list})
+
+class ProductDetailView(generic.DetailView):
+    template_name='product_detail.html'
+    model = Product
+
+
+
+
+def profile_list(request):
+    profiles_list=Profile.objects.all()
+    return render(request,'profile_list.html',{'profiles' :profiles_list})
+     # Number of visits to this view, as counted in the session variable.
+#OLD
+    #num_visits=request.session.get('num_visits', 0)
+    #request.session['num_visits'] = num_visits+1
+    #return render(request, 'staff_list.html', context={ 'num_visits': num_visits})
+
+class ProfileDetailView(generic.DetailView):
+    template_name='profile_detail.html'
+    model = Profile
 
 
 #def product_detail(request):
@@ -87,16 +102,36 @@ def product_list(request):
 #    return render(request, 'product_detail.html', {'id': id})
 
 
+#def update_profile(request, user_id):
+#    user = User.objects.get(pk=user_id)
+#    user.profile.bio = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+#    user.save()    
 
-class ProductDetailView(generic.DetailView):
-    template_name='product_detail.html'
-    #queryset = Product
-
-    #def get_object(self):
-    #    id_=self.kwargs.get("id")
-    #    return get_object_or_404(Product, id=id_)
-    ##    return super().get_object(queryset)(id=id)
-    model = Product
+    
+#@login_required
+#@transaction.atomic
+#def update_profile(request):
+#    if request.method == 'POST':
+#        user_form = UserForm(request.POST, instance=request.user)
+#        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+#        if user_form.is_valid() and profile_form.is_valid():
+#            user_form.save()
+#            profile_form.save()
+#            messages.success(request, _('Your profile was successfully updated!'))
+#            return redirect('settings:profile')
+#        else:
+#            messages.error(request, _('Please correct the error below.'))
+#    else:
+#        user_form = UserForm(instance=request.user)
+#        profile_form = ProfileForm(instance=request.user.profile)
+#    return render(request, 'staff_detail.html', {
+#        'user_form': user_form,
+#        'profile_form': profile_form
+#    })    
+    
+#def products(request):
+#    return render(request,'product_home.html',{})
+    
 
 
 
@@ -115,3 +150,12 @@ class ProductDetailView(generic.DetailView):
     
 #    return render(request, 'product_detail.html', context={'product': product})
     
+#class ProductDetailView(generic.DetailView):
+#    template_name='product_detail.html'
+#    #queryset = Product
+
+#    #def get_object(self):
+#    #    id_=self.kwargs.get("id")
+#    #    return get_object_or_404(Product, id=id_)
+#    ##    return super().get_object(queryset)(id=id)
+#    model = Product

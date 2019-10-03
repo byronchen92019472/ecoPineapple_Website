@@ -17,7 +17,8 @@ path('about/', views.about, name='about'),
 path('contact/', views.contact, name='contact'),
 path('rocket/', views.rocket, name='rocket'),
 
-path('staff_list/', views.staff_list, name='staff_list'),
+path('profile_list/', views.profile_list, name='profile_list'),
+path('staff_detailtest/', views.staff_detailtest, name='staff_detailtest'),
 
 path('product_list/', views.product_list, name='product_list'),
 
@@ -26,6 +27,7 @@ path('product_list/', views.product_list, name='product_list'),
 
 
 path('product_detail/<int:pk>', views.ProductDetailView.as_view(), name='product_detail'),
+path('profile_detail/<int:pk>', views.ProfileDetailView.as_view(), name='profile_detail'),
 
 
 #path('agent/<int:pk>', views.AgentDetailView.as_view(), name='agent_detail'),
