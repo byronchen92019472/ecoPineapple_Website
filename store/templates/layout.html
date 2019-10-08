@@ -12,12 +12,18 @@
 
 <body>
     <div class="alert">80% OFF SPACEX STARHOPPER - OFFER ENDS MIDNIGHT</div>
-    <div class="logo"><a href="{% url 'home' %}"><img class="logo" src="../../static/images/eP.PNG" /></a></div>
-    
-        
+    <div class="logo"><a href="{% url 'home' %}"><img class="logo" src="../../static/images/pi.png" /></a></div>
+
+
+
+
+
+
+
+
     <div class="navbar">
         <div class="container">
-            <nav>            
+            <nav>
 
                 <div class="navbarr">
                     <ul class="navbar">
@@ -27,9 +33,10 @@
                         {% if user.is_authenticated %}
                         <!--<li>User: {{ user.get_username }}</li>-->
                         <!--<li><a href="{% url 'staff_detailtest' %}">Staff detail</a></li>-->
+                        ="
                         <li><a href="{% url 'profile_list' %}">Staff</a></li>
-                        
-                        <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+
+                        <li><a href="{% url 'logout'%}?next={{request.path}}">Log out</a></li>
                         {% else %}
 
                         <!--show when logged out-->
@@ -38,34 +45,35 @@
 
 
                     </ul>
-                    </div>
+                </div>
                 <div class="contentclear"></div>
 
-                <ul class="navbar">   <hr />
+                <ul class="navbar">
+                    <hr />
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'product_list' %}">Products</a></li>
                     <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="{% url 'contact' %}">Contact</a></li>
-                    <li><a href="{% url 'rocket' %}">Rockets</a></li>
-					
-                <hr />
+                    <li><a href="{% url 'rocket_home' %}">Rockets</a></li>
+
+                    <hr />
                 </ul>
 
-                </div>
-
-            </nav>
-
         </div>
+
+        </nav>
+
+    </div>
     </div>
 
     <div class="container body-content">
-{% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
 
         <footer>
             <div class="spacer"> </div>
             <div class="words">
-            Every purchase helps our earth survive 1 second longer… Except the rocket
+                Every purchase helps our earth survive 1 second longer… Except the rocket
             </div>
         </footer>
     </div>
@@ -73,7 +81,7 @@
     <script src="{% static '/scripts/jquery-1.10.2.js' %}"></script>
     <script src="{% static '/scripts/bootstrap.js' %}"></script>
     <script src="{% static '/scripts/respond.js' %}"></script>
-{% block scripts %}{% endblock %}
+    {% block scripts %}{% endblock %}
 
 </body>
 </html>

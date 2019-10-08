@@ -1,0 +1,63 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+    {% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static '/content/black.css' %}" />
+
+<div class="container grey" id="grey">
+
+    <div class="sidenav">
+        <h4>Categories</h4>
+        <ul class="sidenav">
+            <li><a href="{% url 'product_list' %}">Full Rockets</a></li>
+            <li><a href="{% url 'product_list' %}">Seat Only</a></li>
+            <li><a href="{% url 'product_list' %}">Extra Cargo</a></li>
+
+        </ul>
+    </div>
+
+    <div class="subcontent">
+
+
+
+        <div class="productdetail">
+
+            <img class="producthero" src="../../static/media/{{ product.image}}" />
+            <div class="productdetailtext">
+                <h4>{{ product.name|capfirst }}</h4>
+                <p>{{ product.desc_short }}</p>
+                <p>{{ product.desc_long }}</p>
+                <div class="productheroprice">
+                    <div class="productpricecart">
+                        from ${{ product.price }}
+                        <br />
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="contentclear"></div>
+
+
+        <hr />
+
+
+
+
+
+
+
+
+
+
+        <div class="contentclear"></div>
+
+
+    </div>
+    <div class="contentclear"></div>
+</div>
+
+
+
+{% endblock %}

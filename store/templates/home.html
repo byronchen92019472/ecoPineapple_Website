@@ -14,11 +14,24 @@
         </div>
 
         <div class="herolower">
-            <a href="{% url 'product_list' %}">Browse Homeware</a>
-            <a href="{% url 'rocket' %}">Browse Rockets</a>
-        </div>
+            <a href="{% url 'product_list' %}">
+                <span class="btnchange" data-abbr="Homeware">
+                    <span>Browse Homeware</span>
+                </span>
+            </a>
+            <a href="{% url 'product_list' %}">
+                <span class="btnchange" data-abbr="Rockets">
+                    <span>Browse Rockets</span>
+                </span>
+            </a>
+            </div>
 
-    </div>
+
+
+
+
+
+        </div>
 </div>
 
 <div class="container grey" id="grey">
@@ -71,7 +84,7 @@ The dream is gone
 I have become comfortably numb</p>
     </div>
 <div class="contentr">
-<img src="../../static/images/homepage.PNG" width="200"/>
+<img class="homeimage" src="../../static/images/homepage.PNG"/>
     </div>
 <div class="contentclear"> </div>
     </div>

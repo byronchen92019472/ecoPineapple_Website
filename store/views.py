@@ -39,13 +39,19 @@ def contact(request):
 
     return render(request, 'contact.html', context={ 'num_visits': num_visits})
 
-def rocket(request):
+def rocket_home(request):
      # Number of visits to this view, as counted in the session variable.
     num_visits=request.session.get('num_visits', 0)
     request.session['num_visits'] = num_visits+1
 
     return render(request, 'rocket_home.html', context={ 'num_visits': num_visits})
 
+def rocket_list(request):
+     # Number of visits to this view, as counted in the session variable.
+    num_visits=request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits+1
+
+    return render(request, 'rocket_list.html', context={ 'num_visits': num_visits})
 
 
 def staff_detailtest(request):
@@ -66,7 +72,7 @@ class ProductDetailView(generic.DetailView):
 
 
 
-
+@login_required
 def profile_list(request):
     profiles_list=Profile.objects.all()
     return render(request,'profile_list.html',{'profiles' :profiles_list})
