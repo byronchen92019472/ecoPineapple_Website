@@ -24,6 +24,9 @@ class Product(models.Model):
     desc_long = models.CharField(max_length=1000)
     price=models.DecimalField(max_digits=16, decimal_places=2)
     image = models.ImageField(upload_to='images')
+    hero=models.BooleanField()
+    #rocket=models.BooleanField()
+    #seat=models.BooleanField()
 
 
 

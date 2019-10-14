@@ -1,40 +1,52 @@
 
+
 body {
     width: 960px;
-    margin: 0 auto;
+    margin: 0px auto;
     font-family: Arial;
     background-color: #FFFFFF;
-
+    border: 0px solid red;
+    padding: 0px 0px;
 }
+
 p {
     color: #262626;
 }
+
 h1 {
     font-family: sans-serif;
-    font-size:2.5em;
+    font-size: 2.5em;
     font-weight: 400;
 }
+
 h2 {
     font-family: sans-serif;
     font-size: 1.5em;
     font-weight: 200;
 }
+
 h3 {
     color: #262626;
 }
+
 h4 {
     color: #262626;
+}
+
+a {
+    text-decoration: none;
 }
 
 /******************/
 /*BLACK FADING*/
 /****************/
-
+div {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
 
 #test p {
-    /*margin-top: 25px;
-    font-size: 21px;
-    text-align: center;*/
     animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
@@ -127,15 +139,16 @@ input[type="checkbox"].input-validation-error {
     font-weight: 500;
     text-align: center;
     padding: 10px 0;
+    border: 0px solid blue;
 }
+
 .logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 220px;
-    border-width:0px 0px;
+    border-width: 0px 0px;
     padding: 20px 0px 0px 0px;
-    
 }
 
 
@@ -143,26 +156,26 @@ input[type="checkbox"].input-validation-error {
 footer {
     color: #262626;
     text-align: left;
-    
     font-size: small;
 }
+
     footer .words {
         background-color: #f2f2f2;
-
         padding: 10px;
     }
+
     footer .spacer {
         background-color: #ffffff;
         height: 15px;
     }
+
 .container {
     position: relative;
     text-align: center;
-
 }
 
 .grey {
-    background-color:#f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .hero {
@@ -171,7 +184,7 @@ footer {
     margin-right: auto;
     width: 960px;
     border-width: 20px 0px 0px 0px;
-    border: 1px solid red;
+    border: 0px solid red;
 }
 /* Centered text */
 
@@ -182,23 +195,24 @@ footer {
     transform: translate(-50%, -50%);
     color: white;
 }
+
 .herolower {
     position: absolute;
     bottom: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    width:80%;
+    width: 80%;
 }
 
-.herolower a {
-    display: inline;
-    border: 1px solid #ffffff;
-    padding: 10px;
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0px 10px;
-}
+    .herolower a {
+        display: inline;
+        border: 1px solid #ffffff;
+        padding: 10px;
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0px 10px;
+    }
 
 
 .contentl {
@@ -208,70 +222,84 @@ footer {
     text-align: left;
     padding: 40px 20px 10px 20px;
 }
+
 .contentr {
     width: 350px;
     float: right;
     border: 0px solid blue;
     padding: 60px 10px 30px 0px;
 }
-.contentclear{
-    clear:both;
+
+.contentclear {
+    clear: both;
 }
 
-.burger {
+div.burger {
+    width: 35px;
+    height: 4px;
+    background-color: #008000;
+    margin: 8px 0;
+}
+
+.burgerbox {
     position: absolute;
     display: none;
-    left: 5px;
-    top: 5px;
+    left: 12px;
+    top: 10px;
     z-index: 998;
-
 }
-img.burger {
 
+img.burger {
     /*margin-top: 30px;*/
     width: 60px;
 }
 
-
-.navbar{
-position: relative;
-text-align: center;
+img.logomobile {
+    position: absolute;
+    display: none;
+    left: 25%;
+    top: 12px;
+    z-index: 998;
+    width: 240px;
 }
+
+.navbar {
+    position: relative;
+    text-align: center;
+}
+
 .navbarr {
     text-align: right;
-    border: 1px solid red;
+    border: 0px solid red;
     height: 30px;
 }
 
 
-nav{
-    align-content:center;
+nav {
+    align-content: center;
 }
 
-nav ul {
-    background-color: #ffffff;
-    margin: 0;
-    padding: 5px 0px 15px 0px;
+    nav ul {
+        background-color: #ffffff;
+        margin: 0;
+        padding: 5px 0px 15px 0px;
+    }
 
-    
-    
-}
+    nav li {
+        margin: 5px;
+        display: inline;
+        list-style: none;
+        padding: 5px;
+        border: none;
+        font-family: sans-serif;
+    }
 
-nav li {
-    margin: 5px;
-    display: inline;
-    list-style: none;
-    padding: 5px;
-    border: none;
-    font-family: sans-serif;
-}
-
-nav li a {
-    text-decoration: none;
-    font-family: sans-serif;
-    color: #262626;
-    font-size:small;
-}
+        nav li a {
+            text-decoration: none;
+            font-family: sans-serif;
+            color: #262626;
+            font-size: small;
+        }
 
 
 
@@ -284,6 +312,7 @@ ul.sidenav {
     border: none;
     font-family: sans-serif;
 }
+
     ul.sidenav li {
         margin: 0px;
         list-style: none;
@@ -306,6 +335,7 @@ ul.sidenav {
     text-align: left;
     padding: 0px 0px 0px 20px;
 }
+
     .sidenav hr {
         visibility: hidden;
     }
@@ -327,84 +357,87 @@ img.homeimage {
 }
 
 img.producthero {
-    float:left;
+    float: left;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top:30px;
+    margin-top: 30px;
     width: 220px;
-
 }
 
 div.producthero {
     width: 700px;
-    /*height: 400px;*/
     float: right;
     border: 0px solid blue;
     padding: 30px 10px 60px 10px;
-    text-align:left;
-    vertical-align:middle;
+    text-align: left;
+    vertical-align: middle;
 }
+
 div.productherotext {
-    float:left;
-    width:430px;
+    float: left;
+    width: 430px;
     border: 0px solid red;
     padding: 30px 0px 0px 20px;
     text-align: left;
     vertical-align: middle;
 }
+
 div.productheroprice {
-    float:right;
+    float: right;
     width: 200px;
     padding: 0px 0px 0px 0px;
     border: 0px solid green;
 }
 
-
-
 div.productlist {
+    border: 0px solid pink;
+}
+
+div.productlistitem {
+    border: 0px solid red;
     width: 200px;
     height: 260px;
     float: left;
-    border: 0px solid blue;
     padding: 20px 20px 50px 20px;
     text-align: center;
     vertical-align: middle;
 }
 
 
-img.productlist {
-
+img.productlistitem {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 120px;
 }
 
-div.productlisttext {
-    
+div.productlistitemtext {
     width: 200px;
     border: 0px solid red;
     padding: 0px;
     text-align: center;
     vertical-align: middle;
-    
 }
 
-a {
-    text-decoration:none;
+img.productdetail {
+    float: left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 220px;
 }
-
 
 div.productdetail {
     width: 700px;
-    /*height: 400px;*/
     float: right;
     border: 0px solid blue;
     padding: 10px 10px 60px 10px;
     text-align: left;
     vertical-align: middle;
 }
+
 div.productdetailtext {
     float: left;
     width: 430px;
@@ -416,15 +449,7 @@ div.productdetailtext {
 
 
 
-div.productheroprice {
-    float: right;
-    width: 200px;
-    padding: 0px 0px 0px 0px;
-    border: 0px solid green;
-}
-
-div.productpricecart{
-    
+div.productpricecart {
     border: 0px solid red;
 }
 
@@ -448,10 +473,10 @@ div.productpricecart{
     .logo {
         width: 160px;
     }
-    .alert {
 
+    .alert {
         font-size: .8em;
-        font-weight:600;
+        font-weight: 600;
     }
 
     .hero {
@@ -467,6 +492,7 @@ div.productpricecart{
         width: 280px;
         padding: 60px 10px 0px 0px;
     }
+
     img.homeimage {
         width: 250px;
     }
@@ -478,10 +504,10 @@ div.productpricecart{
     .sidenav {
         width: 400px;
     }
-    .sidenav hr{
-        visibility:visible;
-    }
 
+        .sidenav hr {
+            visibility: visible;
+        }
 }
 
 /************************************************************** 768 ***/
@@ -489,6 +515,9 @@ div.productpricecart{
 
     body {
         width: 100%;
+        border: 0px solid red;
+        margin: 0px;
+        padding: 0px;
     }
 
     h1 {
@@ -501,11 +530,25 @@ div.productpricecart{
 
     .logo {
         width: 160px;
+        display: none;
+    }
+
+    header {
+        padding: 30px;
     }
 
     .alert {
+        display: none;
+        background-color: #FFFFFF;
+        color: #F2F2F2;
+        font-family: sans-serif;
         font-size: .8em;
-        font-weight: 600;
+        font-weight: 100;
+        height: 59px;
+        text-align: right;
+        padding: 0px;
+        vertical-align: middle;
+        border: 0px solid red;
     }
 
     .hero {
@@ -513,7 +556,7 @@ div.productpricecart{
     }
 
     .herolower {
-        border: 1px solid green;
+        border: 0px solid green;
     }
 
     .contentl {
@@ -561,7 +604,16 @@ div.productpricecart{
 
     nav li {
         display: block;
+        height: 40px;
     }
+
+        nav li a {
+            text-decoration: none;
+            font-family: sans-serif;
+            color: #262626;
+            font-size: 1.3em;
+        }
+
 
     nav {
         /*display: block;*/
@@ -581,15 +633,108 @@ div.productpricecart{
         cursor: default;
         /*display: block;*/
         margin: 0px;
-
-        padding: 5px;
+        padding: 0px;
         border: none;
     }
 
-
-    .burger {
-
-
+    navbarr {
         display: block;
+        text-align: left;
+    }
+
+    .burgerbox {
+        display: block;
+    }
+
+    img.logomobile {
+        display: block;
+    }
+
+
+    .subcontent {
+        width: 90%;
+        /*float: right;*/
+        border: 0px solid #ff6a00;
+        /*padding: 0px;*/
+        text-align: center;
+    }
+
+
+    img.producthero {
+        margin-top: 30px;
+        width: 120px;
+    }
+
+    div.producthero {
+        width: 100%;
+        float: right;
+        padding: 30px 10px 60px 10px;
+    }
+
+    div.productherotext {
+        width: 65%;
+        padding: 30px 0px 0px 10px;
+        border: 0px solid blue;
+    }
+
+    div.productheroprice {
+        width: 200px;
+        padding: 0px 0px 0px 0px;
+    }
+
+
+    div.productlist{
+        border: 0px solid pink;
+    }
+    div.productlistitem {
+        width: 90%;
+        float: left;
+        border: 0px solid blue;
+        padding: 20px 20px 50px 20px;
+        text-align: center;
 
     }
+
+
+    img.productlistitem {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 120px;
+    }
+
+    div.productlistitemtext {
+        width: 100%;
+        border: 0px solid red;
+        padding: 0px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+
+    img.productdetail {
+        float:left;
+    }
+
+    div.productdetail {
+        width: 100%;
+        float: right;
+        border: 0px solid blue;
+        padding: 10px 10px 60px 10px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    div.productdetailtext {
+        float: left;
+        width: 430px;
+        border: 0px solid red;
+        padding: 0px 0px 0px 0px;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+
+
+
+}

@@ -10,7 +10,7 @@
                     <li><a href="{% url 'product_list' %}">Cleaning</a></li>
                     <li><a href="{% url 'product_list' %}">Furniture</a></li>
                     <li><a href="{% url 'product_list' %}">Personal</a></li>
-                    <li><a href="{% url 'product_list' %}">Food &Aacute; Drink</a></li>
+                    <li><a href="{% url 'product_list' %}">Food &amp; Drink</a></li>
     </ul>
     </div>
 
@@ -20,7 +20,7 @@
 
     <div class="productdetail">
 
-        <img class="producthero" src="../../static/media/{{ product.image}}" />
+        <img class="productdetail" src="../../media/{{ product.image}}" />
         <div class="productdetailtext">
             <h4>{{ product.name|capfirst }}</h4>
             <p>{{ product.desc_short }}</p>

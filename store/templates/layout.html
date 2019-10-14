@@ -8,82 +8,65 @@
 
     <link rel="stylesheet" type="text/css" href="{% static '/content/site.css' %}" />
     <script>
-        function myFunction() {
-            var x = document.getElementById("nav");
-            if (x.style.display === "block") {
-                x.style.display = "none";
+        //controls the Nav bar when in mobile display
+        function menuToggle() {
+            var menu = document.getElementById("nav");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
             } else {
-                x.style.display = "block";
+                menu.style.display = "block";
             }
         }
     </script>
 </head>
 
 <body>
-
-
-
-
-
-
-
-
-
     <header>
 
-
-
+        <!--standard header-->
         <div class="alert">80% OFF SPACEX STARHOPPER - OFFER ENDS MIDNIGHT</div>
         <div class="logo"><a href="{% url 'home' %}"><img class="logo" src="../../static/images/pi.png" /></a></div>
 
-    </header>
+        <!--Mobile header-->
+        <a href="javascript:void(0);" class="burger" onclick="menuToggle()">
+            <div class="burgerbox">
+                <div class="burger"></div>
+                <div class="burger"></div>
+                <div class="burger"></div>
+            </div>
+        </a>
+        <a href="{% url 'home' %}"><img class="logomobile" src="../../static/images/pi2.png" /></a>
 
-    <a href="javascript:void(0);" class="burger" onclick="myFunction()">
-        <img class="burger" src="../../static/images/burger.png" />
-    </a>
+    </header>
 
     <nav id="nav">
 
+        <div class="navbarr">
+            <ul>
+                <li><a href="{% url 'home' %}">Cart</a></li>
+                <!--show only when logged in-->
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'profile_list' %}">Staff</a></li>
+                <li><a href="{% url 'logout'%}?next={{request.path}}">Log out</a></li>
+                {% else %}
+                <!--show when logged out-->
+                <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
 
+        <div class="navbar">
+            <ul class="navbar">
+                <hr />
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'product_list' %}">Products</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'rocket_home' %}">Rockets</a></li>
 
-            <div class="container">
-
-
-                <div class="navbarr">
-
-                    <ul>
-
-                        <li><a href="{% url 'home' %}">Cart</a></li>
-
-                        <!--show only when logged in-->
-                        {% if user.is_authenticated %}
-                            <li><a href="{% url 'profile_list' %}">Staff</a></li>
-                            <li><a href="{% url 'logout'%}?next={{request.path}}">Log out</a></li>
-                        {% else %}
-                            <!--show when logged out-->
-                            <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-                        {% endif %}
-
-
-                    </ul>
-
-                </div>
-
-
-                <ul class="navbar">
-                    <hr />
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'product_list' %}">Products</a></li>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="{% url 'contact' %}">Contact</a></li>
-                    <li><a href="{% url 'rocket_home' %}">Rockets</a></li>
-
-                    <hr />
-                </ul>
-
-
-            </div>
-
+                <hr />
+            </ul>
+        </div>
 
 
 
@@ -108,5 +91,3 @@
 
 </body>
 </html>
-
-

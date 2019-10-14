@@ -132,4 +132,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # insta_project/settings.py
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# where images upload to
+MEDIA_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['store/media']))
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'store/media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'store/media')

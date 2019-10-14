@@ -6,80 +6,84 @@
 
     <div class="sidenav">
         <h4>Categories</h4>
-<ul class="sidenav">   
-                    <li><a href="{% url 'product_list' %}">Cleaning</a></li>
-                    <li><a href="{% url 'product_list' %}">Furniture</a></li>
-                    <li><a href="{% url 'product_list' %}">Personal</a></li>
-                    <li><a href="{% url 'product_list' %}">Food &amp; Drink</a></li>
-    </ul>
+        <ul class="sidenav">
+            <li><a href="{% url 'product_list' %}">Cleaning</a></li>
+            <li><a href="{% url 'product_list' %}">Furniture</a></li>
+            <li><a href="{% url 'product_list' %}">Personal</a></li>
+            <li><a href="{% url 'product_list' %}">Food &amp; Drink</a></li>
+        </ul>
         <hr />
     </div>
 
-<div class="subcontent">
+    <div class="subcontent">
+        Sort - Name | Price
 
 
 
-    <div class="producthero">
 
 
-        <img class="producthero" src="../../static/images/product/cleaner.PNG" />
-        <div class="productherotext">
-            <h4>ecoPineapple Cleaner Range</h4>
-            <p>No more stubborn stains, cleans anything off anything, and save the planet as the same time. You cannot get better!</p>
-            <div class="productheroprice">
-                <div class="productpricecart">
-                    from $8.95
-                    <br />
-                    <button>Add to Cart</button>
+
+        {% if products %}
+        {% for product in products %}
+        {% if product.hero == 1 %}
+        <a href="{% url 'product_detail' product.id %}">
+            <div class="producthero">
+                <img class="producthero" src="../../media/{{ product.image}}" />{{ product.product_id }}
+                <div class="productherotext">
+                    <h4>{{ product.name|capfirst }}</h4>
+                    <p>{{ product.desc_short }}</p>
+                    </a>
+                    <div class="productheroprice">
+                        <div class="productpricecart">
+                            from ${{ product.price }}
+                            <br />
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="contentclear"></div>
+
+
+            <hr />
+            {% endif %}
+            {% endfor %}
+
+            <div class="productlist">
+
+
+                {% for product in products %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <div class="productlistitem">
+                        <img class="productlistitem" src="../../media/{{ product.image}}" />
+                        {{ product.product_id }}
+                        <div class="productlistitemtext">
+                            <h4>{{ product.name|capfirst }}</h4>
+                            <p>{{ product.desc_short }}</p>
+                        </div>
+                </a>
+                <div class="productlistitemprice">
+                    <div class="productpricecart">
+                        from ${{ product.price }}
+                        <br />
+                        <button>Add to Cart</button>
+                    </div>
                 </div>
             </div>
 
-        </div>
+            {% endfor %}
+            {% endif %}
+
+
+            <div class="contentclear"></div>
     </div>
-    <div class="contentclear"></div>
 
-
-    <hr />
-
-
-
-
-
-
-
-
-    {% if products %}
-
-    {% for product in products %}
-    <a href="{% url 'product_detail' product.id %}">
-        <div class="productlist">
-            <img class="productlist" src="../../static/media/{{ product.image}}" />
-            {{ product.product_id }}
-            <div class="productlisttext">
-                <h4>{{ product.name|capfirst }}</h4>
-                <p>{{ product.desc_short }}</p>
-            </div>
-</a>
-    <div class="productlistprice">
-        <div class="productpricecart">
-            from ${{ product.price }}
-            <br />
-            <button>Add to Cart</button>
-        </div>
-    </div>
 </div>
-        
-	  {% endfor %}
-	  {% endif %}
-
-
 <div class="contentclear"></div>
 
 
-        </div>
-    <div class="contentclear"></div>
 
-
-    
 
 {% endblock %}
