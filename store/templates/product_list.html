@@ -16,11 +16,9 @@
     </div>
 
     <div class="subcontent">
-        Sort - Name | Price
-
-
-
-
+        <div class="sort">
+            Sort by - <a href="#">New</a> &darr; | <a href="#">Name</a> | <a href="#">Price</a>
+</div>
 
 
         {% if products %}
@@ -32,16 +30,16 @@
                 <div class="productherotext">
                     <h4>{{ product.name|capfirst }}</h4>
                     <p>{{ product.desc_short }}</p>
-                    </a>
-                    <div class="productheroprice">
-                        <div class="productpricecart">
-                            from ${{ product.price }}
-                            <br />
-                            <button>Add to Cart</button>
-                        </div>
-                    </div>
+        </a>
+        <div class="productheroprice">
+            <div class="productpricecart">
+                from ${{ product.price }}
+                <br />
+                <button>Add to Cart</button>
+            </div>
+        </div>
 
-                </div>
+    </div>
             </div>
             
             <div class="contentclear"></div>

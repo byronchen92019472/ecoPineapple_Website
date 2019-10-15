@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic
 
 from .models import Product
+from .models import Rocket
 from .models import Profile
 
 # Create your views here.
@@ -37,11 +38,7 @@ def rocket_home(request):
 
     return render(request, 'rocket_home.html', context={ 'num_visits': num_visits})
 
-def rocket_list(request):
-    num_visits=request.session.get('num_visits', 0)
-    request.session['num_visits'] = num_visits+1
 
-    return render(request, 'rocket_list.html', context={ 'num_visits': num_visits})
 
 
 def staff_detailtest(request):
@@ -59,6 +56,16 @@ def product_list(request):
 class ProductDetailView(generic.DetailView):
     template_name='product_detail.html'
     model = Product
+
+
+def rocket_list(request):
+    rockets_list=Rocket.objects.all()
+    return render(request,'rocket_list.html',{'rockets' :rockets_list})
+
+class RocketDetailView(generic.DetailView):
+    template_name='rocket_detail.html'
+    model = Rocket
+
 
 
 

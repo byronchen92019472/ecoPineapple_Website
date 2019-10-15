@@ -35,6 +35,7 @@ h4 {
 
 a {
     text-decoration: none;
+    color: #262626;
 }
 
 /******************/
@@ -355,6 +356,13 @@ ul.sidenav {
 img.homeimage {
     width: 300px;
 }
+
+
+div.sort{
+    text-align:right;
+    padding: 10px;
+}
+
 
 img.producthero {
     float: left;

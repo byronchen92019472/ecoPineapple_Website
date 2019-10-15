@@ -9,9 +9,9 @@
     <div class="sidenav">
         <h4>Categories</h4>
         <ul class="sidenav">
-            <li><a href="{% url 'product_list' %}">Full Rockets</a></li>
-            <li><a href="{% url 'product_list' %}">Seat Only</a></li>
-            <li><a href="{% url 'product_list' %}">Extra Cargo</a></li>
+            <li><a href="{% url 'rocket_list' %}">Full Rockets</a></li>
+            <li><a href="{% url 'rocket_list' %}">Seat Only</a></li>
+            <li><a href="{% url 'rocket_list' %}">Extra Cargo</a></li>
 
         </ul>
     </div>
@@ -22,14 +22,14 @@
 
         <div class="productdetail">
 
-            <img class="producthero" src="../../static/media/{{ product.image}}" />
+            <img class="productdetail" src="../../media/{{ rocket.image}}" />
             <div class="productdetailtext">
-                <h4>{{ product.name|capfirst }}</h4>
-                <p>{{ product.desc_short }}</p>
-                <p>{{ product.desc_long }}</p>
+                <h4>{{ rocket.name|capfirst }}</h4>
+                <p>{{ rocket.desc_short }}</p>
+                <p>{{ rocket.desc_long }}</p>
                 <div class="productheroprice">
                     <div class="productpricecart">
-                        from ${{ product.price }}
+                        from ${{ rocket.price }}
                         <br />
                         <button>Add to Cart</button>
                     </div>
@@ -61,3 +61,4 @@
 
 
 {% endblock %}
+

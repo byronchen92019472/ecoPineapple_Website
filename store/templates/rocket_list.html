@@ -9,73 +9,74 @@
     <div class="sidenav">
         <h4>Categories</h4>
         <ul class="sidenav">
-            <li><a href="{% url 'product_list' %}">Full Rockets</a></li>
-            <li><a href="{% url 'product_list' %}">Seat Only</a></li>
-            <li><a href="{% url 'product_list' %}">Extra Cargo</a></li>
-            
+            <li><a href="{% url 'rocket_list' %}">Full Rockets</a></li>
+            <li><a href="{% url 'rocket_list' %}">Seat Only</a></li>
+            <li><a href="{% url 'rocket_list' %}">Extra Cargo</a></li>
         </ul>
     </div>
 
     <div class="subcontent">
-
-
-
-        <div class="producthero">
-
-
-            <img class="producthero" src="../../static/images/product/cleaner.PNG" />
-            <div class="productherotext">
-                <h4>ecoPineapple Cleaner Range</h4>
-                <p>No more stubborn stains, cleans anything off anything, and save the planet as the same time. You cannot get better!</p>
-                <div class="productheroprice">
-                    <div class="productpricecart">
-                        from $8.95
-                        <br />
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-
-            </div>
+        <div class="sort">
+            <p>Sort by - <a href="#">New</a> &darr; | <a href="#">Name</a> | <a href="#">Price</a></p>
         </div>
-        <div class="contentclear"></div>
 
 
-        <hr />
-
-
-
-
-
-
-
-
-        {% if products %}
-
-        {% for product in products %}
-        <a href="{% url 'product_detail' product.id %}">
-            <div class="productlist">
-                <img class="productlist" src="../../static/media/{{ product.image}}" />
-                {{ product.product_id }}
-                <div class="productlisttext">
-                    <h4>{{ product.name|capfirst }}</h4>
-                    <p>{{ product.desc_short }}</p>
-                </div>
+        {% if rockets %}
+        {% for rocket in rockets %}
+        {% if rocket.hero == 1 %}
+        <a href="{% url 'rocket_detail' rocket.id %}">
+            <div class="producthero">
+                <img class="producthero" src="../../media/{{ rocket.image}}" />{{ rocket.rocket_id }}
+                <div class="productherotext">
+                    <h4>{{ rocket.name|capfirst }}</h4>
+                    <p>{{ rocket.desc_short }}</p>
         </a>
-        <div class="productlistprice">
+        <div class="productheroprice">
             <div class="productpricecart">
-                from ${{ product.price }}
+                from ${{ rocket.price }}
                 <br />
                 <button>Add to Cart</button>
             </div>
         </div>
+
     </div>
+</div>
 
-    {% endfor %}
-    {% endif %}
+<div class="contentclear"></div>
 
 
-    <div class="contentclear"></div>
+<hr />
+            {% endif %}
+            {% endfor %}
 
+<div class="productlist">
+
+
+    {% for rocket in rockets %}
+    <a href="{% url 'rocket_detail' rocket.id %}">
+        <div class="productlistitem">
+            <img class="productlistitem" src="../../media/{{ rocket.image}}" />
+            {{ rocket.rocket_id }}
+            <div class="productlistitemtext">
+                <h4>{{ rocket.name|capfirst }}</h4>
+                <p>{{ rocket.desc_short }}</p>
+            </div>
+</a>
+    <div class="productlistitemprice">
+        <div class="productpricecart">
+            from ${{ rocket.price }}
+            <br />
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+            {% endfor %}
+            {% endif %}
+
+
+<div class="contentclear"></div>
+    </div>
 
 </div>
 <div class="contentclear"></div>
@@ -84,3 +85,4 @@
 
 
 {% endblock %}
+
