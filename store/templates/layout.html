@@ -10,18 +10,53 @@
     <script>
         //controls the Nav bar when in mobile display
         function menuToggle() {
-            var menu = document.getElementById("nav");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
+            var main = document.getElementById("navmain");
+            var sub = document.getElementById("navsub");
+            if (main.style.display === "block") {
+                main.style.display = "none";
+                sub.style.display = "none";
+
             } else {
-                menu.style.display = "block";
+                main.style.display = "block";
+                sub.style.display = "block";
             }
         }
+
+        function cartAdd(item) {
+            // pop up the added button
+           // window.alert(item + ' has been added to your cart. Keep shopping, then click checkout once done.');
+            var modal = document.getElementById("myModal");
+            var itemtext = document.getElementById("cartitem");
+            itemtext.innerText = item+ ' has been added to the cart';
+            modal.style.display = "block";
+        }
+        function closeCartAdd() {
+            // pop up the added button
+            // window.alert(item + ' has been added to your cart. Keep shopping, then click checkout once done.');
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+
+
     </script>
 </head>
 
 <body>
     <header>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="close" onclick="closeCartAdd()">&times;</span>
+                <p><span id="cartitem"></span></p>
+                <p>Don't forget to click checkout once you have finished shopping!</p>
+                <span class="close" id="close" onclick="closeCartAdd()">OK</span>
+            </div>
+
+        </div>
 
         <!--standard header-->
         <div class="alert">80% OFF SPACEX STARHOPPER - OFFER ENDS MIDNIGHT</div>
@@ -39,8 +74,8 @@
 
     </header>
 
-    <nav id="nav">
 
+    <nav class="navsub" id="navsub">
         <div class="navbarr">
             <ul>
                 <li><a href="{% url 'home' %}">Cart</a></li>
@@ -54,7 +89,8 @@
                 {% endif %}
             </ul>
         </div>
-
+    </nav>
+    <nav class="navmain" id="navmain">
         <div class="navbar">
             <ul class="navbar">
                 <hr />
@@ -88,6 +124,7 @@
     <script src="{% static '/scripts/bootstrap.js' %}"></script>
     <script src="{% static '/scripts/respond.js' %}"></script>
     {% block scripts %}{% endblock %}
+
 
 </body>
 </html>

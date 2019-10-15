@@ -29,9 +29,9 @@
                 <p>{{ rocket.desc_long }}</p>
                 <div class="productheroprice">
                     <div class="productpricecart">
-                        from ${{ rocket.price }}
+                        ${{ rocket.price }}
                         <br />
-                        <button>Add to Cart</button>
+                        <button onclick="cartAdd('{{ rocket.name|capfirst }}')">Add to Cart</button>
                     </div>
                 </div>
 

@@ -33,9 +33,9 @@
         </a>
         <div class="productheroprice">
             <div class="productpricecart">
-                from ${{ product.price }}
+                ${{ product.price }}
                 <br />
-                <button>Add to Cart</button>
+                <button onclick="cartAdd('{{ product.name|capfirst }}')">Add to Cart</button>
             </div>
         </div>
 
@@ -64,9 +64,9 @@
                 </a>
                 <div class="productlistitemprice">
                     <div class="productpricecart">
-                        from ${{ product.price }}
+                        ${{ product.price }}
                         <br />
-                        <button>Add to Cart</button>
+                        <button onclick="cartAdd('{{ product.name|capfirst }}')">Add to Cart</button>
                     </div>
                 </div>
             </div>
