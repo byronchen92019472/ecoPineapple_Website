@@ -53,15 +53,10 @@
                 <span class="close" id="close" onclick="closeCartAdd()">&times;</span>
                 <p><span id="cartitem"></span></p>
                 <p>Don't forget to click checkout once you have finished shopping!</p>
-                <span class="close" id="close" onclick="closeCartAdd()">OK</span>
+                <span class="close ok" id="close" onclick="closeCartAdd()">OK</span>
             </div>
 
         </div>
-
-        <!--standard header-->
-        <div class="alert">80% OFF SPACEX STARHOPPER - OFFER ENDS MIDNIGHT</div>
-        <div class="logo"><a href="{% url 'home' %}"><img class="logo" src="../../static/images/pi.png" /></a></div>
-
         <!--Mobile header-->
         <a href="javascript:void(0);" class="burger" onclick="menuToggle()">
             <div class="burgerbox">
@@ -71,6 +66,16 @@
             </div>
         </a>
         <a href="{% url 'home' %}"><img class="logomobile" src="../../static/images/pi2.png" /></a>
+
+
+
+
+
+        <!--standard header-->
+        <div class="alert">80% OFF SPACEX STARHOPPER - OFFER ENDS MIDNIGHT</div>
+        <div class="logo"><a href="{% url 'home' %}"><img class="logo" src="../../static/images/pi.png" /></a></div>
+
+
 
     </header>
 
