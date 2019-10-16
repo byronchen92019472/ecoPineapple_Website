@@ -116,7 +116,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Images) - used the below for help
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
@@ -134,5 +134,3 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 MEDIA_URL = '/media/'
 # where images upload to
 MEDIA_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['store/media']))
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'store/media')
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'store/media')

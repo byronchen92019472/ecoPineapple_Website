@@ -354,9 +354,13 @@ ul.sidenav {
 }
 
 img.homeimage {
-    width: 300px;
+    width: 250px;
 }
 
+img.aboutimage {
+    width: 300px;
+    padding-top: 30px;
+}
 
 div.sort {
     text-align: right;
@@ -493,7 +497,7 @@ div.productpricecart {
     color: #262626;
 }
 
-.modal-content p {
+    .modal-content p {
         color: #262626;
     }
 

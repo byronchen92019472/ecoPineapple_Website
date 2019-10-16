@@ -6,7 +6,7 @@ from django.dispatch import receiver
 # Create your models here.
 
 
-#Products
+#Products model
 class Product(models.Model):
 
     PRODUCT_CATEGORY = (('Cleaning', 'Cleaning'),
@@ -14,8 +14,6 @@ class Product(models.Model):
         ('Personal', 'Personal'),
         ('Food & Drink', 'Food & Drink'))
 
-    #product_id = models.UUIDField(primary_key=True, default=uuid.uuid4,
-    #help_text="Unique ID for this Product")
     category = models.CharField(choices=PRODUCT_CATEGORY, max_length=30)
     brand = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
@@ -25,17 +23,10 @@ class Product(models.Model):
     image = models.ImageField(upload_to='images')
     hero = models.BooleanField()
 
-
-
-
-
     def __str__(self):
         #String for representing the Model object
         return '{0} ({1})'.format(self.id,self.name)
 
-
-
-    #https://blog.khophi.co/extending-django-user-model-userprofile-like-a-pro/
 
 
 #Rockets
@@ -49,23 +40,14 @@ class Rocket(models.Model):
     image = models.ImageField(upload_to='images')
     hero = models.BooleanField()
 
-
-
-
-
     def __str__(self):
         #String for representing the Model object
         return '{0} ({1})'.format(self.id,self.name)
 
 
-
+# Profile Model = this was to store additional user details instead of extending the default user models
+# I reasred and got the idea from here  https://blog.khophi.co/extending-django-user-model-userprofile-like-a-pro/
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=30, blank=True)
-    last_name = models.CharField(max_length=30, blank=True)
-    phone = models.CharField(max_length=15, blank=True)
-    email = models.CharField(max_length=30, blank=True)
-
 
     PROFILE_DEPARTMENT = (('Management', 'Management'),
         ('Sales','Sales'),
@@ -75,14 +57,19 @@ class Profile(models.Model):
         ('Finance', 'Finance'),
         ('Legal', 'Legal'),
         ('Human Resources', 'Human Resources'))
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=30, blank=True)
+    last_name = models.CharField(max_length=30, blank=True)
+    phone = models.CharField(max_length=15, blank=True)
+    email = models.CharField(max_length=30, blank=True)
     department = models.CharField(choices=PROFILE_DEPARTMENT, max_length=30, blank=True)
-
-
     
     def __str__(self):
         #String for representing the Model object
         return '{0} ({1})'.format(self.id,self.user)
     
+#creating prolie when creating a user
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
@@ -98,7 +85,6 @@ def save_user_profile(sender, instance, **kwargs):
 
 class Category(models.Model):
 
-    
     #product_id = models.UUIDField(primary_key=True, default=uuid.uuid4,
     #help_text="Unique ID for this Product")
     name = models.CharField(max_length=30)

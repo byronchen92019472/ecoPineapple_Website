@@ -30,6 +30,8 @@
                 <div class="productherotext">
                     <h4>{{ rocket.name|capfirst }}</h4>
                     <p>{{ rocket.desc_short }}</p>
+                    </div>
+                </div>
         </a>
         <div class="productheroprice">
             <div class="productpricecart">
@@ -53,30 +55,31 @@
 
 
     {% for rocket in rockets %}
-    <a href="{% url 'rocket_detail' rocket.id %}">
-        <div class="productlistitem">
+    <div class="productlistitem">
+        <a href="{% url 'rocket_detail' rocket.id %}">
+
             <img class="productlistitem" src="../../media/{{ rocket.image}}" />
             {{ rocket.rocket_id }}
             <div class="productlistitemtext">
                 <h4>{{ rocket.name|capfirst }}</h4>
                 <p>{{ rocket.desc_short }}</p>
             </div>
-</a>
-    <div class="productlistitemprice">
-        <div class="productpricecart">
-            ${{ rocket.price }}
-            <br />
-            <button onclick="cartAdd('{{ rocket.name|capfirst }}')">Add to Cart</button>
+        </a>
+        <div class="productlistitemprice">
+            <div class="productpricecart">
+                ${{ rocket.price }}
+                <br />
+                <button onclick="cartAdd('{{ rocket.name|capfirst }}')">Add to Cart</button>
+            </div>
         </div>
     </div>
+
+    {% endfor %}
+    {% endif %}
+
+
+    <div class="contentclear"></div>
 </div>
-
-            {% endfor %}
-            {% endif %}
-
-
-<div class="contentclear"></div>
-    </div>
 
 </div>
 <div class="contentclear"></div>

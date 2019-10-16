@@ -5,9 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.views import generic
 
-from .models import Product
-from .models import Rocket
-from .models import Profile
+from .models import Product, Rocket, Profile
 
 # Create your views here.
 
@@ -17,8 +15,6 @@ def home(request):
     request.session['num_visits'] = num_visits+1
 
     return render(request, 'home.html', context={ 'num_visits': num_visits})
-
-
 
 def about(request):
     num_visits=request.session.get('num_visits', 0)
@@ -41,14 +37,7 @@ def rocket_home(request):
 
 
 
-def staff_detailtest(request):
-
-    num_visits=request.session.get('num_visits', 0)
-    request.session['num_visits'] = num_visits+1
-    return render(request, 'staff_detailtest.html', context={ 'num_visits': num_visits}) 
-
-
-
+#These views access data - product, rockets and staff(profile)
 def product_list(request):
     products_list=Product.objects.all()
     return render(request,'product_list.html',{'products' :products_list})
@@ -69,13 +58,14 @@ class RocketDetailView(generic.DetailView):
 
 
 
+#These views are securered from view if not logged in
 @login_required
 def profile_list(request):
     profiles_list=Profile.objects.all()
     return render(request,'profile_list.html',{'profiles' :profiles_list})
 
 
-class ProfileDetailView(generic.DetailView):
+class ProfileDetailView(LoginRequiredMixin, generic.DetailView):
     template_name='profile_detail.html'
     model = Profile
 
