@@ -1,23 +1,23 @@
 # ecoPineapple's Website
 This website showcases ecoPineapple and the products they offer. It focuses on eco-friendly solutions to use in daily life, and offers rockets as an alternative to show how expensive that option would be if you were to leave earth
 
-# IMPORTANT
+## IMPORTANT
 
 These instructions assume you have python installed
 
-# Installation
+### Installation
 
 The source code for this application was created using Visual Studio 2017. 
 copy the application folder to your machine in a location you have full access rights
 
-## To execute
+### To Execute
 
 from within the ep folder you will first start the virtual environment and then the server
 ```
 virt_ep\scripts\activate
 python manage.py runserver
 ```
-# View the sitenow with a browser navigate to the following addresses
+## View the site now with a browser navigate to the following addresses
 
 Public site: http://localhost:8000
 
@@ -36,9 +36,9 @@ ID  admin
 PW  trent123
 
 
-# Acknowledgments
+### Acknowledgments
 
 Thanks to the ecoPineapple team and thanks to ComputerPowerPlus.
 
-# Planning Document
+### Planning Document
 To view and update the Planning document that is shared, visit: https://github.com/byronchen92019472/ecoPineapple_Project
