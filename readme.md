@@ -1,18 +1,40 @@
-# ecoPineapple's Sustainability App
-This mobile application addresses our current sustainability issues. It focuses on eco-friendly solutions to use in daily life whilst also promoting the ecoPineapple company's e-commerce solution.
+# ecoPineapple's Website
+This website showcases ecoPineapple and the products they offer. It focuses on eco-friendly solutions to use in daily life, and offers rockets as an alternative to show how expensive that option would be if you were to leave earth
 
+## IMPORTANT
+```
+These instructions assume you have python installed
+```
 ## Installation
 ```
-The source code for this application was built and deployed to virtual emulators using Visual Studio 2019. 
-Other versions of Visual Studio will most likely be compatible, but have not been tested.
-The latest version of Android Studio is need for Android emulation.
+The source code for this application was created using Visual Studio 2017. 
+copy the application folder to your machine in a location you have full access rights
 ```
-## To deploy the project on an virtual emulator
+## To execute
+
 ```
-When the project folder has been opened, navigate to the 'Solution Explorer - Folder View'.
-Hit the button 'Switch Views' and change view to 'Sustainability App.sln'
-If no Android emulator has been set up, create a new emulator that still runs on a supported version of Android.
-Build and Deploy Solution.
+from within the ep folder you will first start the virtual environment and then the server
+
+virt_ep\scripts\activate
+python manage.py runserver
+
+now with a browser navigate to the following addresses
+
+Public site: http://localhost:8000
+Administration site: http://localhost:8000/admin
+
+Marketing User
+ID	Byron
+PW	trent123
+
+Staff User
+ID	Charles
+PW	trent123
+
+Super user
+ID  admin 
+PW  trent123
+
 ```
 ## Acknowledgments
 
