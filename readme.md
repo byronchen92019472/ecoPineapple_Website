@@ -17,9 +17,10 @@ from within the ep folder you will first start the virtual environment and then 
 virt_ep\scripts\activate
 python manage.py runserver
 ```
-now with a browser navigate to the following addresses
+# View the sitenow with a browser navigate to the following addresses
 
 Public site: http://localhost:8000
+
 Administration site: http://localhost:8000/admin
 
 Marketing User
